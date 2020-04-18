@@ -27,7 +27,7 @@ class Board(BaseCanvas):
         self.add_sprite(
             Npc(
                 NpcSettings(),
-                (500, 420, 0, 0),
+                (500, 420, 30, 30),
                 self,
             )
         )
