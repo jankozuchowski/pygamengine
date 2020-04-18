@@ -1,6 +1,7 @@
-Move code regarding canvas walls to collision class.
+Move code regarding canvas (max x; max y) walls to collision class.
 
-Implement observer / bus?
+implement clock
+
 Implement game_state class:
 implement game - steering master class between views, and screen
 

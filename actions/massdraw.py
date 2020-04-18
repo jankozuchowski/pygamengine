@@ -9,8 +9,10 @@ class BaseMassDraw(ABC):
     def execute(self):
         pass
 
-    def _draw_entities(self, entity_group):
+    def _draw_background(self):
         self.parent.surface.fill(self.parent.settings.bg_color)
+
+    def _draw_entities(self, entity_group):
         for entity in entity_group:
             if hasattr(entity, 'draw'):
                 entity.draw.execute()
@@ -19,9 +21,12 @@ class BaseMassDraw(ABC):
 
 class ViewMassDraw(BaseMassDraw):
     def execute(self):
+        self._draw_background()
         self._draw_entities(self.parent.views)
 
 
 class CanvasMassDraw(BaseMassDraw):
     def execute(self):
+        self._draw_background()
         self._draw_entities(self.parent.sprites)
+        self._draw_entities(self.parent.sprites_without_collision)

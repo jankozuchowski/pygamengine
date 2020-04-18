@@ -13,6 +13,7 @@ class BaseCanvas(ABC):
         self.height = position[2]
         self.width = position[3]
         self.surface = pygame.Surface((self.position[2], self.position[3]))
+        self.sprites_without_collision = pygame.sprite.Group()
         self.sprites = pygame.sprite.Group()
         self.draw = CanvasMassDraw(self)
         self.update = CanvasMassUpdate(self)
