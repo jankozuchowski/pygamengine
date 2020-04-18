@@ -3,7 +3,6 @@ from font import Font
 from sprites.basesprite import BaseSprite
 from settings.sprites.cont import Settings as ContSettings
 from settings.sprites.quit import Settings as QuitSettings
-# from settings.objects.settings import Settings as SettingsSettings
 from actions.quitbus import quitbus
 from actions.viewbus import viewbus
 from canvases.basecanvas import BaseCanvas
@@ -25,17 +24,6 @@ class CanvasMenu(BaseCanvas):
                 self,
             )
         )
-#        self.add_view(
-#            MenuString(
-#                SettingsSettings(),
-#                (
-#                    self.surface.get_rect().width / 2,
-#                    (self.surface.get_rect().height - 200) / 3 * 2,
-#                    0,
-#                    0,
-#                ),
-#            )
-#        )
         self.add_sprite(
             QuitMenuString(
                 QuitSettings(),

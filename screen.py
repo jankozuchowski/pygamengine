@@ -19,7 +19,6 @@ class Screen:
         self.settings.width = self.surface.get_rect().width
         pygame.display.set_caption("game title")
         self.views = []
-        # self.views.append(Game(self.settings.views.game, (0,0,100,100)))
         self.views.append(Game(
             GameSettings(),
             self.position,
