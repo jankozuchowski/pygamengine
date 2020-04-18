@@ -1,6 +1,7 @@
 from views.baseview import BaseView
 import pygame
 from canvases.board import Board
+from settings.canvases.board import Settings
 
 
 class Game(BaseView):
@@ -10,5 +11,5 @@ class Game(BaseView):
                 pygame.K_ESCAPE: 'menu',
                 }
         self.add_view(
-                Board(settings, (0, 0, 500, 500))
+                Board(Settings(), (0, 0, 500, 500))
                 )

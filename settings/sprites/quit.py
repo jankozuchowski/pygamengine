@@ -1,4 +1,4 @@
-from settings.canvases.menu import Font
+from settings.views.menu import Font
 from settings.colors import Colors
 
 

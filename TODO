@@ -1,5 +1,3 @@
-Move code regarding canvas (max x; max y) walls to collision class.
-
 implement clock
 
 rework menu
