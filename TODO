@@ -2,6 +2,8 @@ Move code regarding canvas (max x; max y) walls to collision class.
 
 implement clock
 
+rework menu
+
 Implement game_state class:
 implement game - steering master class between views, and screen
 

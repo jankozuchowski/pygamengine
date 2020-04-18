@@ -6,7 +6,7 @@ from settings.sprites.quit import Settings as QuitSettings
 # from settings.objects.settings import Settings as SettingsSettings
 from actions.quitbus import quitbus
 from actions.viewbus import viewbus
-from views.canvases.basecanvas import BaseCanvas
+from canvases.basecanvas import BaseCanvas
 
 
 class CanvasMenu(BaseCanvas):

@@ -1,8 +1,8 @@
 import pygame
 from views.game import Game
 from views.menu import Menu
-from settings.views.game import Settings as GameSettings
-from settings.views.menu import Settings as MenuSettings
+from settings.canvases.game import Settings as GameSettings
+from settings.canvases.menu import Settings as MenuSettings
 from actions.viewbus import viewbus
 
 

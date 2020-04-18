@@ -5,7 +5,7 @@ from settings.sprites.player import Settings as PlayerSettings
 from settings.actions.loadmap import Settings as LoadMapSettings
 from actions.loadmap import LoadMap
 from maps.first_week import first_week
-from views.canvases.basecanvas import BaseCanvas
+from canvases.basecanvas import BaseCanvas
 from actions.massupdate import CanvasMassUpdate
 
 

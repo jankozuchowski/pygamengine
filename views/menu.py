@@ -1,6 +1,6 @@
 from actions.inputpass import ViewInputPass
 from views.baseview import BaseView
-from views.canvases.menu import CanvasMenu
+from canvases.menu import CanvasMenu
 
 
 class Menu(BaseView):

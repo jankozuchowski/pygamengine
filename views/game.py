@@ -1,6 +1,6 @@
 from views.baseview import BaseView
 import pygame
-from views.canvases.board import Board
+from canvases.board import Board
 
 
 class Game(BaseView):
