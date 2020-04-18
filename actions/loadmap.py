@@ -16,6 +16,7 @@ class LoadMap:
                     map_object_class_instance = map_cell[0](
                             map_object_settings,
                             (column*side, row*side, side, side),
+                            self.parent,
                             )
                     self.parent.sprites.add(map_object_class_instance)
 

@@ -6,13 +6,15 @@ from actions.move import Move
 
 
 class BaseSprite(pygame.sprite.Sprite):
-    def __init__(self, settings, position, parent_position):
+    def __init__(self, settings, position, parent):
+        super().__init__()
+        self.siblings = parent.sprites
         self.settings = settings
         self.x = position[0]
         self.y = position[1]
         self.width = position[2]
         self.height = position[3]
-        super().__init__()
+        parent_position = parent.position
         self.east_wall = parent_position[2]
         self.south_wall = parent_position[3]
         self.base_speed = settings.speed
@@ -27,6 +29,10 @@ class BaseSprite(pygame.sprite.Sprite):
                 self.width,
                 self.height,
                 )
+
+    @property
+    def rect(self):
+        return pygame.Rect((self.x, self.y), (self.width, self.height))
 
     @property
     def draw_arguments(self):

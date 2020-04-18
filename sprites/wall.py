@@ -3,8 +3,8 @@ import pygame
 
 
 class Wall(BaseSprite):
-    def __init__(self, settings, position):
-        super().__init__(settings, position, (0, 0, 0, 0))
+    def __init__(self, settings, position, parent):
+        super().__init__(settings, position, parent)
         self.surface = pygame.Surface((self.width, self.height))
         pygame.draw.rect(
                 self.surface,

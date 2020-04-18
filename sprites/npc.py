@@ -5,8 +5,8 @@ from font import Font
 
 
 class Npc(BaseSprite):
-    def __init__(self, settings, position, constraints):
-        super().__init__(settings, position, constraints)
+    def __init__(self, settings, position, parent):
+        super().__init__(settings, position, parent)
         self.move = NpcMove(self)
         character_generator = Font(self.settings.font)
         self.surface = character_generator.get_character(

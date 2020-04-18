@@ -1,18 +1,18 @@
+Move code regarding canvas walls to collision class.
+
 Implement observer / bus?
 Implement game_state class:
 implement game - steering master class between views, and screen
-think of a better way of passing terminate to game loop
-
-Collisions / hitboxes
-
-canvas (screen -> view -> view -> canvas -> objects) ?                  or at least come up with a way for efficient view switch
 
 Differentiate between entity groups created by map loader.
 
 generic view creator (initiating view on base of method return value)
-make available to define what kind of objects are to be implement in given object as an config
+make available to define as an config what kind of objects are to be loaded on given canvas
 
 
 interaction between player and map elements.
 moving sprites
 sounds
+
+
+bug - if you're fast enough you can run trough walls

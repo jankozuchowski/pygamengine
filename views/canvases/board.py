@@ -6,6 +6,7 @@ from settings.actions.loadmap import Settings as LoadMapSettings
 from actions.loadmap import LoadMap
 from maps.first_week import first_week
 from views.canvases.basecanvas import BaseCanvas
+from actions.massupdate import CanvasMassUpdate
 
 
 class Board(BaseCanvas):
@@ -17,20 +18,24 @@ class Board(BaseCanvas):
                 (
                     self.surface.get_rect().width / 2,
                     self.surface.get_rect().height / 2,
-                    0,
-                    0,
+                    30,
+                    30,
                 ),
-                self.position,
+                self,
             )
         )
         self.add_sprite(
             Npc(
                 NpcSettings(),
                 (500, 420, 0, 0),
-                self.position,
+                self,
             )
         )
         self.loadMap = LoadMap(LoadMapSettings(), self)
         self.loadMap.load(first_week)
-#        self.direction.append('E')
-#        self.moving = True
+        self.update = BoardUpdater(self)
+
+
+class BoardUpdater(CanvasMassUpdate):
+    def execute(self):
+        super().execute()

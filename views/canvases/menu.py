@@ -23,6 +23,7 @@ class CanvasMenu(BaseCanvas):
                     0,
                     0,
                 ),
+                self,
             )
         )
 #        self.add_view(
@@ -46,6 +47,7 @@ class CanvasMenu(BaseCanvas):
                     0,
                     0,
                 ),
+                self,
             )
         )
         self.active = 0
@@ -86,9 +88,8 @@ class MenuInput:
 
 
 class MenuString(BaseSprite):
-    def __init__(self, settings, position):
-        dummy_parent_position = (0, 0, 0, 0)
-        super().__init__(settings, position, dummy_parent_position)
+    def __init__(self, settings, position, parent):
+        super().__init__(settings, position, parent)
         self.font = Font(settings.font)
         self.active = settings.active
         if hasattr(settings, 'next_view'):

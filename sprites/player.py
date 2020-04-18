@@ -13,8 +13,8 @@ class PlayerActions(Enum):
 
 
 class Player(BaseSprite):
-    def __init__(self, settings, position, constraints):
-        super().__init__(settings, position, constraints)
+    def __init__(self, settings, position, parent):
+        super().__init__(settings, position, parent)
         self.playerActions = PlayerActions
         character_generator = Font(self.settings.font)
         self.surface = character_generator.get_character(
