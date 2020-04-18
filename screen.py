@@ -10,7 +10,9 @@ class Screen:
     def __init__(self, settings):
         self.settings = settings
         if not self.settings.fullscreen:
-            self.surface = pygame.display.set_mode((self.settings.width, self.settings.height))
+            self.surface = pygame.display.set_mode(
+                    (self.settings.width, self.settings.height)
+                    )
         if self.settings.fullscreen:
             self.surface = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
         self.settings.height = self.surface.get_rect().height

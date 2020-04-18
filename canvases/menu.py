@@ -19,7 +19,6 @@ class CanvasMenu(BaseCanvas):
                 (
                     self.surface.get_rect().width / 2,
                     200,
-#                   (self.surface.get_rect().height - 200) / 2,
                     0,
                     0,
                 ),
@@ -43,7 +42,6 @@ class CanvasMenu(BaseCanvas):
                 (
                     self.surface.get_rect().width / 2,
                     400,
-#                   (self.surface.get_rect().height - 200),
                     0,
                     0,
                 ),
@@ -83,7 +81,9 @@ class MenuInput:
                 change = 1
                 self.parent._update_entities_activity(change)
             elif event.key == pygame.K_RETURN:
-                self.parent.change_view = list(self.parent.sprites)[self.parent.active].execute()
+                self.parent.change_view = list(
+                        self.parent.sprites
+                        )[self.parent.active].execute()
         self.parent.update.execute()
 
 

@@ -1,6 +1,7 @@
 from settings.canvases.menu import Font
 from settings.colors import Colors
 
+
 class Settings:
     def __init__(self):
         self.width = 1000

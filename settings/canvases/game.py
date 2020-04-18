@@ -1,5 +1,6 @@
 from settings.colors import Colors
 
+
 class Settings:
     def __init__(self):
         self.name = 'game'
