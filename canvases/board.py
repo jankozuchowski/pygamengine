@@ -24,13 +24,13 @@ class Board(BaseCanvas):
                 self,
             )
         )
-        self.add_sprite(
-            Npc(
-                NpcSettings(),
-                (500, 420, 30, 30),
-                self,
-            )
-        )
+#        self.add_sprite(
+#            Npc(
+#                NpcSettings(),
+#                (500, 420, 30, 30),
+#                self,
+#            )
+#        )
         self.loadMap = LoadMap(LoadMapSettings(), self)
         self.loadMap.load(first_week)
         self.update = BoardUpdater(self)

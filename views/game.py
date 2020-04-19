@@ -11,5 +11,10 @@ class Game(BaseView):
                 pygame.K_ESCAPE: 'menu',
                 }
         self.add_view(
-                Board(Settings(), (0, 0, 500, 500))
+                Board(Settings(), (
+                    0,
+                    0,
+                    self.surface.get_rect().width / 10 * 8,
+                    self.surface.get_rect().height / 10 * 8,
+                    ))
                 )

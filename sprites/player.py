@@ -24,19 +24,17 @@ class Player(BaseSprite):
                 )
         self.input = PlayerCharacterInput(self)
 
-    def _switch_movement(self, key):
+    def stop_action(self, key):
         for action in self.playerActions:
             if action.value == key:
-                self._update_movement(action.name)
-
-    def _update_movement(self, direction):
-        if direction in self.move.direction:
-            self.move.direction.remove(direction)
-            if len(self.move.direction) == 0:
+                self.move.remove_direction(action.name)
                 self.move.moving = False
-        else:
-            self.move.direction.append(direction)
-            self.move.moving = True
+
+    def start_action(self, key):
+        for action in self.playerActions:
+            if action.value == key:
+                self.move.add_direction(action.name)
+                self.move.moving = True
 
 
 class PlayerCharacterInput:
@@ -44,5 +42,7 @@ class PlayerCharacterInput:
         self.parent = parent
 
     def execute(self, event):
-        if event.type == pygame.KEYDOWN or event.type == pygame.KEYUP:
-            self.parent._switch_movement(event.key)
+        if event.type == pygame.KEYDOWN:
+            self.parent.start_action(event.key)
+        if event.type == pygame.KEYUP:
+            self.parent.stop_action(event.key)

@@ -10,8 +10,8 @@ class BaseView(ABC):
         self.settings = settings
         self.x = position[0]
         self.y = position[1]
-        self.height = position[2]
-        self.width = position[3]
+        self.width = position[2]
+        self.height = position[3]
         self.surface = pygame.Surface((self.position[2], self.position[3]))
         self.views = []
         self.change_view = {

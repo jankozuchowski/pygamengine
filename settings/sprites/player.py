@@ -3,7 +3,7 @@ from settings.colors import Colors
 
 class Settings:
     def __init__(self):
-        self.speed = 5
+        self.speed = 20
         self.character = '@'
         self.color = Colors.white.value
         self.bg_color = Colors.black.value

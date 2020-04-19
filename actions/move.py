@@ -4,30 +4,33 @@ from actions.collide import Collide
 class Move:
     def __init__(self, parent):
         self.parent = parent
-        self.direction = []
+        self.direction = {
+                'N': False,
+                'S': False,
+                'W': False,
+                'E': False,
+                }
         self.moving = True
         self.speed = parent.base_speed
         self.parent.collide = Collide(self.parent)
 
     def execute(self):
         if self.moving:
-            if 'N' in self.direction:
+            if self.direction['N']:
                 self.parent.y -= self.speed
-                if self.parent.collide.execute():
-                    self.parent.y += self.speed
-            if 'S' in self.direction:
+                self.parent.collide.execute('N')
+            if self.direction['S']:
                 self.parent.y += self.speed
-                if self.parent.collide.execute():
-                    self.parent.y -= self.speed
-            if 'W' in self.direction:
+                self.parent.collide.execute('S')
+            if self.direction['W']:
                 self.parent.x -= self.speed
-                if self.parent.collide.execute():
-                    self.parent.x += self.speed
-            if 'E' in self.direction:
+                self.parent.collide.execute('W')
+            if self.direction['E']:
                 self.parent.x += self.speed
-                if self.parent.collide.execute():
-                    self.parent.x -= self.speed
+                self.parent.collide.execute('E')
 
     def add_direction(self, direction):
-        if direction in ['N', 'S', 'W', 'E', []]:
-            self.direction = direction
+        self.direction[direction] = True
+
+    def remove_direction(self, direction):
+        self.direction[direction] = False
