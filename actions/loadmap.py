@@ -18,7 +18,12 @@ class LoadMap:
                             (column*side, row*side, side, side),
                             self.parent,
                             )
-                    self.parent.sprites.add(map_object_class_instance)
+                    if map_cell[2]:
+                        self.parent.sprites.add(map_object_class_instance)
+                    else:
+                        self.parent.sprites_without_collision.add(
+                            map_object_class_instance
+                            )
 
     def transform(self, map_layout):
         pass

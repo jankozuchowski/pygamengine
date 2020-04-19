@@ -28,5 +28,5 @@ class ViewMassDraw(BaseMassDraw):
 class CanvasMassDraw(BaseMassDraw):
     def execute(self):
         self._draw_background()
-        self._draw_entities(self.parent.sprites)
         self._draw_entities(self.parent.sprites_without_collision)
+        self._draw_entities(self.parent.sprites)
