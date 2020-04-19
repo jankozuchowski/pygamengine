@@ -7,12 +7,9 @@ implement game - steering master class between views, and screen
 
 interaction between player and map elements.
 
-drawing player in center of board.
-
 beginning and end of day, something between, inventory menu (mouse handling)
 
 generic view creator (initiating view on base of method return value)
-make available to define as an config what kind of objects are to be loaded on given canvas
 
 moving sprites
 sounds
