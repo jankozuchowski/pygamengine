@@ -17,23 +17,17 @@ class Npc(BaseSprite):
 
 
 class NpcMove(Move):
-    def __init__(self, parent):
-        super().__init__(parent)
-        self.direction = []
-
     def execute(self):
         self._random()
         super().execute()
 
     def _random(self):
         direction = random.randrange(5)
-        if direction == 0:
-            self.direction = []
         if direction == 1:
-            self.direction.append('N')
+            self.north()
         if direction == 2:
-            self.direction.append('S')
+            self.south()
         if direction == 3:
-            self.direction.append('W')
+            self.west()
         if direction == 4:
-            self.direction.append('E')
+            self.east()

@@ -23,18 +23,29 @@ class Player(BaseSprite):
                 bg_color=self.settings.bg_color,
                 )
         self.input = PlayerCharacterInput(self)
+        self.facing_direction = []
 
     def stop_action(self, key):
         for action in self.playerActions:
             if action.value == key:
                 self.move.remove_direction(action.name)
-                self.move.moving = False
 
     def start_action(self, key):
         for action in self.playerActions:
             if action.value == key:
+                self._change_facing_direction(action.name)
                 self.move.add_direction(action.name)
-                self.move.moving = True
+
+    def _change_facing_direction(self, direction):
+        fdir = self.facing_direction
+        fdir.append(direction)
+        fdir = list(set(fdir))
+        if 'W' in fdir and 'E' in fdir:
+            fdir.remove('W')
+            fdir.remove('E')
+        if 'N' in fdir and 'S' in fdir:
+            fdir.remove('N')
+            fdir.remove('S')
 
 
 class PlayerCharacterInput:
