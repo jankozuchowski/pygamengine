@@ -30,3 +30,9 @@ class CanvasMassDraw(BaseMassDraw):
         self._draw_background()
         self._draw_entities(self.parent.sprites_without_collision)
         self._draw_entities(self.parent.sprites)
+
+    def _draw_entities(self, entity_group):
+        for entity in entity_group:
+            if hasattr(entity, 'draw'):
+                entity.draw.execute()
+            self.parent.surface.blit(*entity.draw_arguments)
