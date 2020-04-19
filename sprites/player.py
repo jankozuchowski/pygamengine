@@ -24,6 +24,7 @@ class Player(BaseSprite):
                 )
         self.input = PlayerCharacterInput(self)
         self.facing_direction = []
+        self.name = 'player'
 
     def stop_action(self, key):
         for action in self.playerActions:
